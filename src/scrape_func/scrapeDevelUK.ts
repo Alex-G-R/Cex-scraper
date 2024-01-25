@@ -9,6 +9,9 @@ import { checkRobotsTxt } from '../common/scrape_utils';
 const pathPS3 = "data/te.txt";
 
 export async function start_scraping_devel_uk(page_param: number) {
+
+    const pathPS3 = `data/united_kingdom-page${page_param}-devel.txt`;
+
     const browser = await puppeteer.launch({
         // headless: false,
     });

@@ -3,7 +3,7 @@ const prompt = require("prompt-sync")({ sigint: true });
 
 import { start_scraping_pl_ps3 } from "./scrape_func/scrapePS3PL";
 import { start_scraping_uk_ps3 } from "./scrape_func/scrapePS3UK";
-import { start_scraping_devel_pl } from "./scrape_func/scrapeDevelPoland";
+import { start_scraping_devel_pl } from "./scrape_func/scrapeDevelPL";
 import { start_scraping_devel_uk } from "./scrape_func/scrapeDevelUK";
 
 const app = express();
