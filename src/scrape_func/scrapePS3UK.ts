@@ -3,11 +3,12 @@ const puppeteer = require('puppeteer-extra');
 const pluginStealth = require('puppeteer-extra-plugin-stealth');
 const fs = require('fs').promises;
 
-import { link_array } from './links/ps3games';
+import { link_array } from '../links/ps3gamesUK';
+import { checkRobotsTxt } from '../common/scrape_utils';
 
-const pathPS3 = "data/ps3PL.txt";
+const pathPS3 = "data/ps3UK.txt";
 
-export async function start_scraping_pl_ps3() {
+export async function start_scraping_uk_ps3() {
     for (let i = 0; i < link_array.length; i++) {
         const browser = await puppeteer.launch({
             // headless: false,
@@ -21,7 +22,7 @@ export async function start_scraping_pl_ps3() {
             console.log(link_array[i]);
 
             // Check if the URL is allowed by robots.txt before proceeding
-            const isAllowed = await checkRobotsTxtPLPS3(page);
+            const isAllowed = await checkRobotsTxt(page);
             if (!isAllowed) {
                 console.log('Access to the current URL is disallowed by robots.txt. Skipping...');
                 continue;
@@ -38,7 +39,6 @@ export async function start_scraping_pl_ps3() {
                 return elements.map(element => element.textContent.trim());
             });
             
-
             fs.appendFile(pathPS3, `${link_array[i]} \n`)
                     .then(() => {
                     })
@@ -58,7 +58,7 @@ export async function start_scraping_pl_ps3() {
             console.log(`\n`);
 
             // Introduce random delays between requests
-            await page.waitForTimeout(Math.floor(Math.random() * 10000) + 20000);
+            await page.waitForTimeout(Math.floor(Math.random() * 10000) + 25000);
 
         } catch (error) {
             console.log(`Error encountered: ${error}`);
@@ -69,16 +69,3 @@ export async function start_scraping_pl_ps3() {
 }
 
 
-export async function checkRobotsTxtPLPS3(page) {
-    const robotsTxtUrl = page.url().replace(/\/$/, '') + '/robots.txt';
-    const robotsTxtResponse = await page.goto(robotsTxtUrl, { waitUntil: 'networkidle2' });
-
-    if (robotsTxtResponse.status() === 200) {
-        const robotsTxtContent = await page.evaluate(() => document.body.textContent);
-        const isAllowed = !/User-agent: \*\s+Disallow:\s*\//.test(robotsTxtContent);
-        return isAllowed;
-    }
-
-    // If unable to fetch robots.txt, assume it's allowed
-    return true;
-}

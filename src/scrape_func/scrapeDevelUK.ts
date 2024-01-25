@@ -3,24 +3,25 @@ const puppeteer = require('puppeteer-extra');
 const pluginStealth = require('puppeteer-extra-plugin-stealth');
 const fs = require('fs').promises;
 
-import { link_array } from './links/ps3games';
+import { link_array } from '../links/ps3gamesUK';
+import { checkRobotsTxt } from '../common/scrape_utils';
 
 const pathPS3 = "data/te.txt";
 
-export async function start_scraping_uk_ps3a() {
+export async function start_scraping_devel_uk(page_param: number) {
     const browser = await puppeteer.launch({
         // headless: false,
     });
 
     const page = await browser.newPage();
     puppeteer.use(pluginStealth());
-    const n = 2;
+    const page_index = page_param - 1;
     try {
-        await page.goto(link_array[n], { waitUntil: 'domcontentloaded' });
-        console.log(link_array[n]);
+        await page.goto(link_array[page_index], { waitUntil: 'domcontentloaded' });
+        console.log(link_array[page_index]);
 
         // Check if the URL is allowed by robots.txt before proceeding
-        const isAllowed = await checkRobotsTxtUKPS3(page);
+        const isAllowed = await checkRobotsTxt(page);
         if (!isAllowed) {
             console.log('Access to the current URL is disallowed by robots.txt. Skipping...');
         }
@@ -36,7 +37,7 @@ export async function start_scraping_uk_ps3a() {
             return elements.map(element => element.textContent.trim());
         });
         
-        fs.appendFile(pathPS3, `${link_array[n]} \n`)
+        fs.appendFile(pathPS3, `${link_array[page_index]} \n`)
                 .then(() => {
                 })
                 .catch((error) => {
@@ -63,19 +64,3 @@ export async function start_scraping_uk_ps3a() {
         await browser.close();
     }
 }
-
-
-export async function checkRobotsTxtUKPS3(page) {
-    const robotsTxtUrl = page.url().replace(/\/$/, '') + '/robots.txt';
-    const robotsTxtResponse = await page.goto(robotsTxtUrl, { waitUntil: 'networkidle2' });
-
-    if (robotsTxtResponse.status() === 200) {
-        const robotsTxtContent = await page.evaluate(() => document.body.textContent);
-        const isAllowed = !/User-agent: \*\s+Disallow:\s*\//.test(robotsTxtContent);
-        return isAllowed;
-    }
-
-    // If unable to fetch robots.txt, assume it's allowed
-    return true;
-}
-

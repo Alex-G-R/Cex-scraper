@@ -58,7 +58,7 @@ export const URL_57: string = 'https://uk.webuy.com/search?page=57&categoryIds=8
 export const URL_58: string = 'https://uk.webuy.com/search?page=58&categoryIds=808&categoryName=Playstation3+Games';
 export const URL_59: string = 'https://uk.webuy.com/search?page=59&categoryIds=808&categoryName=Playstation3+Games';
 
-export const link_array_UK = [URL_1, URL_2, URL_3,URL_4,URL_5,URL_6,URL_7,URL_8,URL_9,URL_10,URL_11,URL_12,URL_13,URL_14,URL_15,
+export const link_array = [URL_1, URL_2, URL_3,URL_4,URL_5,URL_6,URL_7,URL_8,URL_9,URL_10,URL_11,URL_12,URL_13,URL_14,URL_15,
     URL_16,URL_17,URL_18,URL_19,URL_20,URL_21,URL_22,URL_23,URL_24,URL_25,URL_26,URL_27,URL_28,URL_29,URL_30,
     URL_31,URL_32,URL_33,URL_34,URL_35,URL_36,URL_37,URL_38,URL_39,URL_40,URL_41,URL_42,URL_43,URL_44,URL_45,
     URL_46,URL_47,URL_48,URL_49,URL_50,URL_51,URL_52,URL_53,URL_54,URL_55,URL_56,URL_57,URL_58,URL_59
