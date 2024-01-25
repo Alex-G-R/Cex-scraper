@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")({ sigint: true });
+
 export function menu_one()
 {
     console.log("Hey, what server would you like to scrape? ");

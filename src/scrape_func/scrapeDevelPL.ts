@@ -28,8 +28,8 @@ export async function start_scraping_devel_pl(page_param: number) {
             console.log('Access to the current URL is disallowed by robots.txt. Skipping...');
         }
 
-        await page.waitForSelector('.product-main-price', { timeout: 50000 });
-        await page.waitForSelector('.card-title a', { timeout: 50000 });
+        await page.waitForSelector('.product-main-price', { timeout: 60000 });
+        await page.waitForSelector('.card-title a', { timeout: 60000 });
 
         const titles = await page.$$eval('.card-title a', elements => {
             return elements.map(element => element.textContent.trim());

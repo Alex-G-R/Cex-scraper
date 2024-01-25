@@ -1,5 +1,4 @@
 const express = require('express');
-const prompt = require("prompt-sync")({ sigint: true });
 
 import { start_scraping_pl_ps3 } from "./scrape_func/scrapePS3PL";
 import { start_scraping_uk_ps3 } from "./scrape_func/scrapePS3UK";
