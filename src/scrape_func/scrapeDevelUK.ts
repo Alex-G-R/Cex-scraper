@@ -13,7 +13,7 @@ export async function start_scraping_devel_uk(page_param: number) {
     const pathPS3 = `data/united_kingdom-page${page_param}-devel.txt`;
 
     const browser = await puppeteer.launch({
-        // headless: false,
+        headless: 'new',
     });
 
     const page = await browser.newPage();

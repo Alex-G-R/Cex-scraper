@@ -11,7 +11,7 @@ const pathPS3 = "data/ps3UK.txt";
 export async function start_scraping_uk_ps3() {
     for (let i = 0; i < link_array.length; i++) {
         const browser = await puppeteer.launch({
-            // headless: false,
+            headless: 'new',
         });
 
         const page = await browser.newPage();
