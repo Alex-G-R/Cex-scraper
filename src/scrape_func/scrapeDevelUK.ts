@@ -63,7 +63,11 @@ export async function start_scraping_devel_uk(page_param: number) {
 
     } catch (error) {
         console.log(`Error encountered: ${error}`);
+        return;
     } finally {
         await browser.close();
+        console.log("The data has been saved to the yourdir/Cex-scraper/data");
+        console.log("You may now close the program.");
+        return;
     }
 }

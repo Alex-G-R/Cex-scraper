@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cex scraper</title>
+    <style>
+        #pageNumber{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Set-up the scrape</h1>
+    <form method="post" action="/submit">
+        
+        <label for="selectServer">Select server:</label>
+        <select id="selectServer" name="selectServer">
+            <option value="-">-|-</option>
+            <option value="uk_server">United Kingodm</option>
+            <option value="pl_server">Poland</option>
+        </select>
+        <br>
+        <label for="fullscrape" class="fullscrape-checkbox">Full scrape: </label>
+        <input type="checkbox" class="fullscrape-checkbox" id="fullscrape" name="fullscrape" checked>
+        <br>
+        <input type="number" class="page-number" id="pageNumber" name="pageNumber" placeholder="Number of the page:">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let i = 1;
+        document.getElementById('fullscrape').addEventListener("click", () => {
+            if(i % 2 == 1)
+            {
+                document.getElementById("pageNumber").style.display = "block";
+                i++;
+            }
+            else if (i % 2 == 0)
+            {
+                document.getElementById("pageNumber").style.display = "none";
+                i++;
+            }
+        });
+    </script>
+</body>
+</html>
