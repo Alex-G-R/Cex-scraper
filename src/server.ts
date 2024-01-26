@@ -1,13 +1,40 @@
 const express = require('express');
+const prompt = require("prompt-sync")({ sigint: true });
 
 import { start_scraping_pl_ps3 } from "./scrape_func/scrapePS3PL";
 import { start_scraping_uk_ps3 } from "./scrape_func/scrapePS3UK";
 import { start_scraping_devel_pl } from "./scrape_func/scrapeDevelPL";
 import { start_scraping_devel_uk } from "./scrape_func/scrapeDevelUK";
-import { menu_one, menu_devel, menu_devel_page } from './common/index_utils';
+import { menu_one, menu_devel, menu_devel_page } from './common/server_utils';
 
 const app = express();
 const PORT = 6969;
+
+const server = app.listen(PORT, () => console.log(`Server is listening on PORT: ${PORT}`));
+
+console.log("Do you want to use the terminal version or the web gui version?");
+console.log("1 -> Terminal version.");
+console.log("2 -> Web gui version.");
+const mode = prompt("Please choose one option: ");
+
+if(parseInt(mode) === 1)
+{
+    startScraping();
+}
+else if(parseInt(mode) === 2)
+{
+    console.log("Open the web-browser of choice and go to 'localhost:6969'.");
+    app.get('/', (req, res) => {
+        console.log("User connected.");
+        res.send("wazup");
+    }); 
+    
+}
+else
+{
+    throw "This option does not exist.";
+}
+
 
 async function startScraping() {
 
@@ -55,7 +82,3 @@ async function startScraping() {
 }
 
 
-startScraping();
-
-
-const server = app.listen(PORT, () => console.log(`Server is listening on PORT: ${PORT}`));
