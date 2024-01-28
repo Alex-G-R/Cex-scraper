@@ -45,19 +45,20 @@ If applicable, include screenshots of the project or its features.
 
 ## License 📝
 
-This project is licensed under the [MIT LICENSE](link-to-license-file).
+This project is licensed under the [MIT LICENSE](https://github.com/Alex-G-R/Cex-scraper/blob/main/LICENSE).
 
 ## Acknowledgments 🙏
 
 Credit to inspiration sources or contributors.
+[kxvosowski](https://github.com/kxvosowski)
 
 ## Contact 📧
 
-For any questions or feedback, feel free to reach out to me at `{email}`
+For any questions or feedback, feel free to reach out to me at `{alex.grabski555@gmail.com}`
 
 ## Project Status 🚀
 
-Current status on the project.
+Working however still in development
 
 ## README Template Author
 
