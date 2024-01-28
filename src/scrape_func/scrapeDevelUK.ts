@@ -8,6 +8,8 @@ import { checkRobotsTxt } from '../common/scrape_utils';
 
 const pathPS3 = "data/te.txt";
 
+const kurs = 5.11;
+
 export async function start_scraping_devel_uk(page_param: number) {
 
     const pathPS3 = `data/united_kingdom-page${page_param}-devel.txt`;
@@ -47,7 +49,8 @@ export async function start_scraping_devel_uk(page_param: number) {
                     console.log(`Error: ${error}`);
                 });
         for (let j = 0; j < prices.length; j++) {
-            const data = `${titles[j]}: ${prices[j]}`;
+            const price_exchaned = prices[j].slice(1);
+            const data = `${titles[j]}: ${prices[j]} -> ${(parseFloat(price_exchaned) * kurs).toFixed(2)}`;
             console.log(data);
             fs.appendFile(pathPS3, data+"\n")
                 .then(() => {

@@ -47,7 +47,8 @@ export async function start_scraping_pl_ps3() {
                         console.log(`Error: ${error}`);
                     });
             for (let j = 0; j < prices.length; j++) {
-                const data = `${titles[j]}: ${prices[j]}`;
+                const price_exchaned = prices[j].slice(0, -2);
+                const data = `${titles[j]}: ${parseFloat(price_exchaned)}`;
                 console.log(data);
                 fs.appendFile(pathPS3, data+"\n")
                     .then(() => {

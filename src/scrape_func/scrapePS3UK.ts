@@ -8,6 +8,8 @@ import { checkRobotsTxt } from '../common/scrape_utils';
 
 const pathPS3 = "data/ps3UK.txt";
 
+const kurs = 5.11;
+
 export async function start_scraping_uk_ps3() {
     for (let i = 0; i < link_array.length; i++) {
         const browser = await puppeteer.launch({
@@ -46,7 +48,8 @@ export async function start_scraping_uk_ps3() {
                         console.log(`Error: ${error}`);
                     });
             for (let j = 0; j < prices.length; j++) {
-                const data = `${titles[j]}: ${prices[j]}`;
+                const price_exchaned = prices[j].slice(1);
+                const data = `${titles[j]}: ${prices[j]} -> ${(parseFloat(price_exchaned) * kurs).toFixed(2)}`;
                 console.log(data);
                 fs.appendFile(pathPS3, data+"\n")
                     .then(() => {
