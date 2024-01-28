@@ -19,26 +19,33 @@ Short project description here.
 2. Navigate to the project directory using `cd {Cex-scraper}`.
 3. Open the terminal and using the NPM install the node modules `npm install`
 4. Build the app using npm: `npm run b`
-5. Turn on the app using npm: `npm run .`
-6. Or 
+5. Turn on the app using npm: `npm run .` / or turn on the app using the Cex-scraper.exe file
+6. Follow the instructions and scrape whatever you want!
 
-## Screenshots 📷
+<!-- ## Screenshots 📷
 
 If applicable, include screenshots of the project or its features.
 
+-->
+
 ## Technologies Used 🛠️
 
-- Technology 1
-- Technology 2
-- Technology 3
+- TypeScript
+- C++
+- EJS
 
 ## Roadmap 🗺️
 
-Planned future developments and features.
+-> Add automatic price comparisons.
+-> Add currency settings
+-> Improve the code structure
+-> Create an API for the scraper
+-> Exchange the currencies based on the real time exchange rate
+-> Automatic detection of scrape error followed by re-scraping of the specific segment
 
 ## License 📝
 
-This project is licensed under the [License Name](link-to-license-file).
+This project is licensed under the [MIT LICENSE](link-to-license-file).
 
 ## Acknowledgments 🙏
 
