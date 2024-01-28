@@ -49,12 +49,12 @@ This project is licensed under the [MIT LICENSE](https://github.com/Alex-G-R/Cex
 
 ## Acknowledgments 🙏
 
-Credit to inspiration sources or contributors:
+Credit to inspiration sources or contributors: <br>
 -> [kxvosowski](https://github.com/kxvosowski)
 
 ## Contact 📧
 
-For any questions or feedback, feel free to reach out to me at `{alex.grabski555@gmail.com}`
+For any questions or feedback, feel free to reach out to me at `alex.grabski555@gmail.com`
 
 ## Project Status 🚀
 
