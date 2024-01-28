@@ -36,12 +36,12 @@ If applicable, include screenshots of the project or its features.
 
 ## Roadmap 🗺️
 
--> Add automatic price comparisons.
--> Add currency settings
--> Improve the code structure
--> Create an API for the scraper
--> Exchange the currencies based on the real time exchange rate
--> Automatic detection of scrape error followed by re-scraping of the specific segment
+-> Add automatic price comparisons. <br>
+-> Add currency settings <br>
+-> Improve the code structure <br>
+-> Create an API for the scraper <br>
+-> Exchange the currencies based on the real time exchange rate <br>
+-> Automatic detection of scrape error followed by re-scraping of the specific segment <br>
 
 ## License 📝
 
