@@ -49,8 +49,8 @@ This project is licensed under the [MIT LICENSE](https://github.com/Alex-G-R/Cex
 
 ## Acknowledgments 🙏
 
-Credit to inspiration sources or contributors.
-[kxvosowski](https://github.com/kxvosowski)
+Credit to inspiration sources or contributors:
+-> [kxvosowski](https://github.com/kxvosowski)
 
 ## Contact 📧
 
