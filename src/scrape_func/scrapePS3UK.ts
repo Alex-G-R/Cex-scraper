@@ -65,7 +65,6 @@ export async function start_scraping_uk_ps3() {
 
         } catch (error) {
             console.log(`Error encountered: ${error}`);
-            return;
         } finally {
             await browser.close();
         }
