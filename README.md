@@ -2,7 +2,7 @@
 
 # Cex scraper 🚀
 
-Short project description here.
+Cex scraper, scrapes the game prices from the UK and Polish Cex game shop, then compares the prices. You can scrape the whole category or specific pages of the category in each country. 
 
 ## Features ✨
 
