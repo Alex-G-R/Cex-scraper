@@ -8,15 +8,14 @@ class Game {
 public:
     std::string fullName;
     std::string firstWord;
-    std::string price;  // Updated to store the last word as a string
-    float numericPrice;  // Price as a numeric value (after removing the last two letters)
+    float numericPrice;
 
-    Game(const std::string& fullName, const std::string& firstWord, const std::string& price, float numericPrice)
-        : fullName(fullName), firstWord(firstWord), price(price), numericPrice(numericPrice) {}
+    Game(const std::string& fullName, const std::string& firstWord, float numericPrice)
+        : fullName(fullName), firstWord(firstWord), numericPrice(numericPrice) {}
 };
 
 int main() {
-    std::ifstream inputFile("your-file.txt");
+    std::ifstream inputFile("C:\\dev\\Cex-scraper\\data\\united_kingdom-page2-devel.txt");
     std::vector<Game> games;
 
     if (!inputFile.is_open()) {
@@ -62,20 +61,29 @@ int main() {
         }
 
         // Create Game object and store in vector
-        games.emplace_back(fullName, firstWord, price, numericPrice);
+        games.emplace_back(fullName, firstWord, numericPrice);
     }
 
-    // Close the file
     inputFile.close();
 
-    // Display the extracted information
-    for (const auto& game : games) {
-        std::cout << "Full Name: " << game.fullName << std::endl;
-        std::cout << "First Word: " << game.firstWord << std::endl;
-        std::cout << "Price: " << game.price << std::endl;
-        std::cout << "Numeric Price: " << game.numericPrice << std::endl;
-        std::cout << "------------------------" << std::endl;
+    // Save data to a text file
+    std::ofstream outputFile("../output.txt");
+    if (!outputFile.is_open()) {
+        std::cerr << "Error opening the output file." << std::endl;
+        return 1;
     }
+
+    // Write each game's information to the text file
+    for (const auto& game : games) {
+        outputFile << "Full Name: " << game.fullName << std::endl;
+        outputFile << "First Word: " << game.firstWord << std::endl;
+        outputFile << "Numeric Price: " << game.numericPrice << std::endl;
+        outputFile << "------------------------" << std::endl;
+    }
+
+    outputFile.close();
+
+    std::cout << "Data saved to output.txt." << std::endl;
 
     return 0;
 }
