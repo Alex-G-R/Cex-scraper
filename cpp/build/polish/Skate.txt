@@ -1,0 +1,3 @@
+Skate 3: 45
+Skate 2: 45
+Skate: 30

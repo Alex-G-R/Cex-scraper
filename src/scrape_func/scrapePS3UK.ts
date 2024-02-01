@@ -41,7 +41,7 @@ export async function start_scraping_uk_ps3() {
                 return elements.map(element => element.textContent.trim());
             });
             
-            fs.appendFile(pathPS3, `\n ${link_array[i]} \n`)
+            fs.appendFile(pathPS3, `\n${link_array[i]}\n`)
                     .then(() => {
                     })
                     .catch((error) => {
@@ -69,9 +69,6 @@ export async function start_scraping_uk_ps3() {
             await browser.close();
         }
     }
-    console.log("The data has been saved to the yourdir/Cex-scraper/data");
-    console.log("You may now close the program.");
-    return;
 }
 
 

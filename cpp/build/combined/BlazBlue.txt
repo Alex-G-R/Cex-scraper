@@ -1,0 +1,10 @@
+BlazBlue: Calamity Trigger: 35
+Blazblue Continuum Shift: 25
+Blazblue Chronophantasm Extend: 90
+
+----------
+BlazBlue: Calamity Trigger
+BlazBlue: Continuum Shift
+Blazblue Continuum Shift Extend
+
+----------

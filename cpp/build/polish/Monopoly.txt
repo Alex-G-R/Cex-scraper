@@ -1,0 +1,2 @@
+Monopoly: 50
+Monopoly Streets: 15
