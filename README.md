@@ -6,8 +6,8 @@ Cex scraper, scrapes the game prices from the UK and Polish Cex game shop, then 
 
 ## Features ✨
 
-- Srape the titles and prices form the Polish and English Cex ✅
-- Save the data to txt files and change the currency so it maches ✅
+- Scrape the titles and prices form the Polish and English Cex ✅
+- Save the data to txt files and change the currency so it matches ✅
 - Scrape only specific pages from Cex ✅
 - Web version with simple yet functional user interface ✅
 
